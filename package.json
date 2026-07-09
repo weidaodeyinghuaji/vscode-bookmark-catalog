@@ -1,0 +1,126 @@
+{
+  "name": "bookmark-catalog",
+  "displayName": "Bookmark Catalog",
+  "description": "VS Code 收藏管理插件：分类、搜索、导入导出、快捷键与持久化",
+  "version": "0.1.0",
+  "publisher": "pm-team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://example.com/bookmark-catalog.git"
+  },
+  "engines": {
+    "vscode": "^1.110.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:bookmarkCatalog.addBookmark",
+    "onCommand:bookmarkCatalog.searchBookmarks",
+    "onCommand:bookmarkCatalog.manageBookmarks",
+    "onCommand:bookmarkCatalog.exportBookmarks",
+    "onCommand:bookmarkCatalog.importBookmarks",
+    "onView:bookmarkCatalog.view"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "bookmarkCatalog",
+          "title": "收藏夹",
+          "icon": "resources/bookmark.svg"
+        }
+      ]
+    },
+    "views": {
+      "bookmarkCatalog": [
+        {
+          "id": "bookmarkCatalog.view",
+          "name": "收藏列表"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "bookmarkCatalog.addBookmark",
+        "title": "收藏夹: 添加当前位置"
+      },
+      {
+        "command": "bookmarkCatalog.searchBookmarks",
+        "title": "收藏夹: 搜索收藏"
+      },
+      {
+        "command": "bookmarkCatalog.manageBookmarks",
+        "title": "收藏夹: 管理收藏"
+      },
+      {
+        "command": "bookmarkCatalog.exportBookmarks",
+        "title": "收藏夹: 导出收藏"
+      },
+      {
+        "command": "bookmarkCatalog.importBookmarks",
+        "title": "收藏夹: 导入收藏"
+      },
+      {
+        "command": "bookmarkCatalog.refreshTree",
+        "title": "收藏夹: 刷新",
+        "icon": "$(refresh)"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "bookmarkCatalog.addBookmark",
+        "key": "ctrl+alt+b",
+        "mac": "cmd+alt+b",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "bookmarkCatalog.searchBookmarks",
+        "key": "ctrl+alt+f",
+        "mac": "cmd+alt+f"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "bookmarkCatalog.refreshTree",
+          "when": "view == bookmarkCatalog.view",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Bookmark Catalog",
+      "properties": {
+        "bookmarkCatalog.defaultCategory": {
+          "type": "string",
+          "default": "默认",
+          "description": "新增收藏时的默认分类。"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "compile": "tsc -p ./",
+    "build": "npm run clean && npm run compile",
+    "test": "vitest run --coverage",
+    "package": "vsce package --no-yarn --out dist/bookmark-catalog.vsix",
+    "verify": "npm run build && npm run test"
+  },
+  "keywords": [
+    "bookmark",
+    "vscode-extension",
+    "catalog"
+  ],
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "@types/vscode": "^1.110.0",
+    "@vitest/coverage-v8": "^4.1.2",
+    "@vscode/vsce": "^3.7.1",
+    "typescript": "^6.0.2",
+    "vitest": "^4.1.2"
+  }
+}

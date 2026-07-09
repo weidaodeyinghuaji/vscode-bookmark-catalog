@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bookmark Catalog 原型</title>
+  <style>
+    body { font-family: "Segoe UI", sans-serif; margin: 0; background: #0f172a; color: #e2e8f0; }
+    .wrap { display: grid; grid-template-columns: 280px 1fr; min-height: 100vh; }
+    .left { border-right: 1px solid #334155; padding: 16px; }
+    .right { padding: 16px; }
+    .panel { background: #111827; border: 1px solid #334155; border-radius: 10px; margin-bottom: 12px; padding: 12px; }
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 999px; background: #1d4ed8; margin-right: 6px; }
+    .item { padding: 8px; border-radius: 8px; border: 1px solid #334155; margin-bottom: 8px; }
+    .kbd { border: 1px solid #64748b; padding: 2px 6px; border-radius: 6px; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <aside class="left">
+      <div class="panel">
+        <h3>收藏分类</h3>
+        <p>前端（12）</p>
+        <p>后端（8）</p>
+        <p>数据库（4）</p>
+      </div>
+      <div class="panel">
+        <h3>快捷操作</h3>
+        <p><span class="kbd">Ctrl+Alt+B</span> 添加收藏</p>
+        <p><span class="kbd">Ctrl+Alt+F</span> 搜索收藏</p>
+      </div>
+    </aside>
+    <main class="right">
+      <div class="panel">
+        <h2>搜索结果</h2>
+        <div class="item">
+          <strong>LoginController.validateToken</strong>
+          <div>[后端] src/auth/login.ts:42</div>
+          <span class="tag">auth</span><span class="tag">token</span>
+        </div>
+        <div class="item">
+          <strong>UserStore.fetchProfile</strong>
+          <div>[前端] src/store/user.ts:18</div>
+          <span class="tag">state</span><span class="tag">profile</span>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>导入导出</h2>
+        <p>支持 JSON 格式备份与恢复，含版本号和导出时间。</p>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

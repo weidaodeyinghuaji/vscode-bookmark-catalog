@@ -1,0 +1,6 @@
+**/.github/**
+**/.vscode/**
+**/tests/**
+**/*.test.ts
+coverage/**
+vitest.config.ts
