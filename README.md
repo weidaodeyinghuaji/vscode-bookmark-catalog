@@ -1,6 +1,21 @@
 # Bookmark Catalog
 
+[![CI](https://github.com/weidaodeyinghuaji/vscode-bookmark-catalog/actions/workflows/ci.yml/badge.svg)](https://github.com/weidaodeyinghuaji/vscode-bookmark-catalog/actions/workflows/ci.yml)
+![TypeScript](https://img.shields.io/badge/TypeScript-5%2B-3178C6)
+![License](https://img.shields.io/badge/license-MIT-green)
+
+![Bookmark Catalog 交互原型预览](docs/assets/bookmark-catalog-overview.png)
+
+> 上图为与插件信息架构一致的交互原型预览，用于展示分类、搜索和导入导出流程。
+
 一个面向 VS Code 的收藏管理插件，支持**分类、搜索、导入导出、快捷键、持久化**。
+
+## 项目亮点
+
+- 将书签领域逻辑、VS Code 存储适配和 TreeView 展示分层组织。
+- 使用 JSON 版本字段校验导入数据，降低错误数据破坏本地收藏的风险。
+- 通过 Vitest 覆盖收藏增删改查和 JSON 导入导出核心流程。
+- GitHub Actions 在每次 push 和 pull request 时自动执行构建与测试。
 
 ## 功能
 
