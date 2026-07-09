@@ -7,7 +7,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://example.com/bookmark-catalog.git"
+    "url": "https://github.com/weidaodeyinghuaji/vscode-bookmark-catalog.git"
+  },
+  "homepage": "https://github.com/weidaodeyinghuaji/vscode-bookmark-catalog#readme",
+  "bugs": {
+    "url": "https://github.com/weidaodeyinghuaji/vscode-bookmark-catalog/issues"
   },
   "engines": {
     "vscode": "^1.110.0"
